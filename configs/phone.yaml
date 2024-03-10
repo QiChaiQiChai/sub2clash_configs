@@ -91,13 +91,6 @@ proxy-groups:
     icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/url-test/lightning.png
     proxies:
       - <all>
-  - name: 🌐 未知站点
-    type: select
-    disable-udp: false
-    icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/fallback/fishing-net.png
-    proxies:
-      - ✈️ ‍起飞
-      - DIRECT
 rules:
   - AND,((DST-PORT,443),(NETWORK,udp)),REJECT
   - GEOSITE,category-ads-all,REJECT
@@ -106,4 +99,4 @@ rules:
   - GEOSITE,private,DIRECT
   - GEOSITE,CN,DIRECT
   - GEOSITE,geolocation-!cn,✈️ ‍起飞
-  - MATCH,🌐 未知站点
+  - MATCH,✈️ ‍起飞
