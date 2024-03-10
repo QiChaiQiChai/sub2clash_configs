@@ -75,46 +75,35 @@ proxies:
 proxy-groups:
   - name: ✈️ ‍起飞
     type: select
-    proxies:
-      - ⚡ ‍低延迟
-      - <all>
     disable-udp: false
     icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/selector/move-selector.png
+    proxies:
+      - ⚡ ‍低延迟
+      - <countries>
+      - <all>
   - name: ⚡ ‍低延迟
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
-    proxies:
-      - <all>
     lazy: true
     disable-udp: false
     icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/url-test/lightning.png
-  - name: 🛩️ ‍墙内
-    type: select
     proxies:
-      - DIRECT
-    disable-udp: false
-    icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/selector/move-selector.png
-  - name: 💩 ‍广告
+      - <all>
+  - name: 🌐 未知站点
     type: select
-    proxies:
-      - REJECT
-    disable-udp: false
-    icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/ad/poop.png
-  - name: 🎏 ‍其他
-    type: select
-    proxies:
-      - ✈️ ‍起飞
-      - 🛩️ ‍墙内
     disable-udp: false
     icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/fallback/fishing-net.png
+    proxies:
+      - ✈️ ‍起飞
+      - DIRECT
 rules:
   - AND,((DST-PORT,443),(NETWORK,udp)),REJECT
-  - GEOSITE,category-ads-all,💩 ‍广告
-  - GEOIP,private,🛩️ ‍墙内,no-resolve
-  - GEOIP,CN,🛩️ ‍墙内,no-resolve
-  - GEOSITE,private,🛩️ ‍墙内
-  - GEOSITE,CN,🛩️ ‍墙内
+  - GEOSITE,category-ads-all,REJECT
+  - GEOIP,private,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - GEOSITE,private,DIRECT
+  - GEOSITE,CN,DIRECT
   - GEOSITE,geolocation-!cn,✈️ ‍起飞
-  - MATCH,🎏 ‍其他
+  - MATCH,🌐 未知站点
