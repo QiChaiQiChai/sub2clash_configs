@@ -79,7 +79,6 @@ proxy-groups:
     icon: https://raw.gitmirror.com/QiChaiQiChai/sub2clash_configs/main/icons/selector/move-selector.png
     proxies:
       - ⚡ ‍低延迟
-      - <countries>
       - <all>
   - name: ⚡ ‍低延迟
     type: url-test
