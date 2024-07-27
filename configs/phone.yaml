@@ -95,7 +95,9 @@ rules:
   - GEOSITE,category-ads-all,REJECT
   - GEOIP,private,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
+  - GEOIP,google,✈️ ‍起飞,no-resolve
   - GEOSITE,private,DIRECT
   - GEOSITE,CN,DIRECT
+  - GEOSITE,google,✈️ ‍起飞
   - GEOSITE,geolocation-!cn,✈️ ‍起飞
   - MATCH,✈️ ‍起飞
